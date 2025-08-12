@@ -1,0 +1,25 @@
+{
+  "name": "jewelry-virtual-tryon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/hands": "^0.4.1675469240",
+    "@tensorflow-models/facemesh": "^0.0.4",
+    "@tensorflow/tfjs": "^2.8.6",
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4",
+    "vite": "^7.0.5"
+  }
+}

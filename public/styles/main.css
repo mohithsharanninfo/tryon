@@ -1,0 +1,235 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+#app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  height: 480px;
+  margin: 0 auto 20px;
+  border: 2px solid #ddd;
+  background-color: #000;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jewelry-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-direction: row;
+}
+
+.jewelry-btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.earrings-btn {
+  background-color: #e6f2ff;
+  color: #0066cc;
+}
+
+.necklace-btn {
+  background-color: #fff2e6;
+  color: #cc6600;
+}
+
+.jewelry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.jewelry-overlay {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  image-rendering: crisp-edges;
+}
+
+.error-message {
+  color: #cc0000;
+  background-color: #ffebeb;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ffcccc;
+}
+
+.jewelry-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.earrings-icon {
+  background-image: url('/jwellery/ear1.png');
+}
+
+.necklace-icon {
+  background-image: url('/jwellery/necklace1.png');
+}
+/* ===== Jewelry image adjustments ===== */
+.jewelry-overlay img {
+  width: 100%;
+  height: 100%;
+  max-width: none;      /* remove fixed 60px cap */
+  max-height: none;     /* remove fixed 60px cap */
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ===== Container for try-on upload ===== */
+.upload-tryon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 20px;
+  position: relative;
+}
+
+#uploaded-image {
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain;
+  background-color: transparent;
+  position: relative;
+  display: block;
+}
+
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: transparent;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Overlay wrapper ===== */
+.jewelry-overlay-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: auto;
+}
+
+.jewelry-overlay-wrapper {
+  position: absolute;
+  z-index: 2;
+  pointer-events: auto;
+  transform-origin: top left;
+}
+
+.jewelry-overlay-wrapper.selected {
+  outline: 2px dashed #007bff;
+  outline-offset: 4px;
+}
+
+/* ===== Manual controls ===== */
+.manual-controls {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.manual-controls button {
+  padding: 6px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+.manual-controls button:hover {
+  background-color: #f0f0f0;
+  border-color: #666;
+}
+
+.jewelry-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== Zoom controls ===== */
+.image-zoom-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  gap: 8px;
+}
+
+.image-zoom-controls button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.image-zoom-controls button:hover {
+  background-color: #eaeaea;
+  border-color: #888;
+}
+
+/* ===== Zoom wrapper ===== */
+.zoom-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+  cursor: grab;
+}
+
+.zoom-wrapper.dragging {
+  cursor: grabbing;
+}
+
+/* ===== Transform wrapper ===== */
+.image-transform-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+}
