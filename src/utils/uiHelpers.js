@@ -2,13 +2,13 @@ export const jewelryLibrary = {
   earrings: {
     diamond: {
       id: 'ear1',
-      path: 'public/jwellery/ear1.png',
+      path: '/public/jwellery/ear1.png',
       type: 'earrings',
       anchorPoints: [234, 454]
     },
     pearl: {
       id: 'ear2',
-      path: 'public/jwellery/ear2.png',
+      path: '/public/jwellery/ear2.png',
       type: 'earrings',
       anchorPoints: [234, 454]
     }
@@ -16,13 +16,13 @@ export const jewelryLibrary = {
   necklaces: {
     gold: {
       id: 'necklace1',
-      path: 'public/jwellery/necklace1.png',
+      path: '/public/jwellery/necklace1.png',
       type: 'necklace',
       anchorPoints: [152, 377]
     },
     silver: {
       id: 'necklace2',
-      path: 'public/jwellery/necklace2.png',
+      path: '/public/jwellery/necklace2.png',
       type: 'necklace',
       anchorPoints: [152, 377]
     }
