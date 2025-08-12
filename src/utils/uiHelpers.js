@@ -1,4 +1,8 @@
 import ear1 from '../assets/jwellery/ear1.png'
+import ear2 from '../assets/jwellery/ear2.png'
+import necklace1 from '../assets/jwellery/necklace1.png'
+import necklace2 from '../assets/jwellery/necklace2.png'
+
 export const jewelryLibrary = {
   earrings: {
     diamond: {
@@ -9,7 +13,7 @@ export const jewelryLibrary = {
     },
     pearl: {
       id: 'ear2',
-      path: '/public/jwellery/ear2.png',
+      path: ear2,
       type: 'earrings',
       anchorPoints: [234, 454]
     }
@@ -17,13 +21,13 @@ export const jewelryLibrary = {
   necklaces: {
     gold: {
       id: 'necklace1',
-      path: '/public/jwellery/necklace1.png',
+      path: necklace1,
       type: 'necklace',
       anchorPoints: [152, 377]
     },
     silver: {
       id: 'necklace2',
-      path: '/public/jwellery/necklace2.png',
+      path: necklace2,
       type: 'necklace',
       anchorPoints: [152, 377]
     }
