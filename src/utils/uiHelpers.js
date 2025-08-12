@@ -1,8 +1,9 @@
+import ear1 from '../assets/jwellery/ear1.png'
 export const jewelryLibrary = {
   earrings: {
     diamond: {
       id: 'ear1',
-      path: '/public/jwellery/ear1.png',
+      path: ear1,
       type: 'earrings',
       anchorPoints: [234, 454]
     },
